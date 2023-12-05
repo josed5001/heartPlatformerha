@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1701808861
+icon.svg::CompressedTexture2D::6270592206544206511::1701806450::1701806453::1::::<><>::
+::res://heartPlatformer/::1701808804
+README.md::TextFile::-1::1701808804::0::1::::<><>::
+::res://scenes/::1701808749
+player.tscn::PackedScene::6330514076766320853::1701808749::0::1::::<><>::res://scripts/player.gd<>uid://cvlr0cstrvqct::::res://icon.svg
+world.tscn::PackedScene::2867035719954421401::1701808713::0::1::::<><>::res://scripts/world.gd<>uid://cwgsv3c8016n6::::res://scenes/player.tscn
+::res://scripts/::1701808713
+player.gd::GDScript::-1::1701808713::0::1::::<>CharacterBody2D<>::
+world.gd::GDScript::-1::1701807584::0::1::::<>Node2D<>::
