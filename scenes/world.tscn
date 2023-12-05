@@ -14,4 +14,4 @@ polygon = PackedVector2Array(16, 0, 16, 80, 16, 128, 32, 128, 56, 144, 56, 144, 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_6qwfj")]
-position = Vector2(80, 80)
+position = Vector2(88, 72)
