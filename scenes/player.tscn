@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwgsv3c8016n6"]
+[gd_scene load_steps=14 format=3 uid="uid://cwgsv3c8016n6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2u2dq"]
+[ext_resource type="Resource" uid="uid://cgiuja0baeta1" path="res://Resources/DefaultMovementData.tres" id="2_04n02"]
 [ext_resource type="Texture2D" uid="uid://0e13733nwqjs" path="res://assets/player.png" id="2_ww6fs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p44tr"]
@@ -82,14 +83,14 @@ size = Vector2(8, 16)
 
 [node name="Player" type="CharacterBody2D"]
 floor_constant_speed = true
-floor_snap_length = 2.0
+floor_snap_length = 3.0
 script = ExtResource("1_2u2dq")
+movement_data = ExtResource("2_04n02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_fteef")
-animation = &"idle"
-frame_progress = 0.847282
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
