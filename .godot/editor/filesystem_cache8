@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702593043
+::res://::1702675594
 icon.svg::CompressedTexture2D::6270592206544206511::1701806450::1701806453::1::::<><>::
 README.md::TextFile::-1::1701808968::0::1::::<><>::
 ::res://assets/::1701984287
 player.png::CompressedTexture2D::1764608971300489860::1701984280::1701984287::1::::<><>::
 ::res://Resources/::1702592896
 DefaultMovementData.tres::Resource/PlayerMovementData::5211719901913072998::1702592896::0::1::::<><>::res://scripts/PlayerMovementData.gd
-FasterMovementData.tres::Resource/PlayerMovementData::3450757303426590759::1702590316::0::1::::<><>::res://scripts/PlayerMovementData.gd
+FasterMovementData.tres::Resource/Resource::3450757303426590759::1702590316::0::1::::<><>::res://scripts/PlayerMovementData.gd
 SlowMovementData.tres::Resource/PlayerMovementData::7008501805092848864::1702590594::0::1::::<><>::res://scripts/PlayerMovementData.gd
 ::res://scenes/::1702593024
 player.tscn::PackedScene::6330514076766320853::1702593023::0::1::::<><>::res://scripts/player.gd<>uid://cgiuja0baeta1::::res://Resources/DefaultMovementData.tres<>uid://0e13733nwqjs::::res://assets/player.png

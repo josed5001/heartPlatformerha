@@ -2,7 +2,5 @@ res://scenes/world.tscn
 res://scripts/player.gd
 res://scenes/player.tscn
 res://scripts/PlayerMovementData.gd
-res://FasterMovementData.tres
-res://SlowMovementData.tres
-res://Resources/SlowMovementData.tres
+res://Resources/FasterMovementData.tres
 res://Resources/DefaultMovementData.tres
