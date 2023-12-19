@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg32wokga74c8"]
+[gd_scene load_steps=7 format=3 uid="uid://bg32wokga74c8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_masge"]
 [ext_resource type="PackedScene" uid="uid://cwgsv3c8016n6" path="res://scenes/player.tscn" id="2_6qwfj"]
 [ext_resource type="PackedScene" uid="uid://g1jbty365wmq" path="res://scenes/spikes.tscn" id="3_4ag31"]
+[ext_resource type="PackedScene" uid="uid://ca5w3tg8ewh7b" path="res://scenes/heart.tscn" id="4_dsalg"]
+[ext_resource type="PackedScene" uid="uid://fmbif42daybe" path="res://scenes/level_completed.tscn" id="5_cgnia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vclwt"]
 size = Vector2(24, 72)
@@ -19,7 +21,7 @@ polygon = PackedVector2Array(16, 0, 16, 80, 16, 128, 32, 128, 32, 144, 56, 144, 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_6qwfj")]
-position = Vector2(48, 72)
+position = Vector2(40, 144)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 collision_mask = 0
@@ -44,3 +46,23 @@ position = Vector2(272, 128)
 
 [node name="Spikes4" parent="." instance=ExtResource("3_4ag31")]
 position = Vector2(288, 128)
+
+[node name="Heart" parent="." instance=ExtResource("4_dsalg")]
+position = Vector2(160, 112)
+
+[node name="Heart2" parent="." instance=ExtResource("4_dsalg")]
+position = Vector2(296, 48)
+
+[node name="Heart3" parent="." instance=ExtResource("4_dsalg")]
+position = Vector2(264, 24)
+
+[node name="Heart4" parent="." instance=ExtResource("4_dsalg")]
+position = Vector2(312, -8)
+
+[node name="Heart5" parent="." instance=ExtResource("4_dsalg")]
+position = Vector2(24, 56)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_cgnia")]
+visible = false

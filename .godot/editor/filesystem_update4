@@ -3,3 +3,8 @@ res://scripts/player.gd
 res://scenes/player.tscn
 res://scenes/spikes.tscn
 res://scenes/hazard_area.tscn
+res://scenes/heart.tscn
+res://scripts/heart.gd
+res://scenes/level_completed.tscn
+res://scripts/Events.gd
+res://scripts/world.gd
