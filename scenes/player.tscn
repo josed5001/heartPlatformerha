@@ -106,6 +106,8 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, -32)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="HazardDectector" type="Area2D" parent="."]
 collision_layer = 0
@@ -114,3 +116,5 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDectector"]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_qyfjx")
+
+[connection signal="area_entered" from="HazardDectector" to="." method="_on_hazard_dectector_area_entered"]

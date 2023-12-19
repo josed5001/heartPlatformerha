@@ -1,8 +1,5 @@
 res://scenes/world.tscn
 res://scripts/player.gd
 res://scenes/player.tscn
-res://scripts/PlayerMovementData.gd
-res://Resources/FasterMovementData.tres
-res://Resources/DefaultMovementData.tres
 res://scenes/spikes.tscn
 res://scenes/hazard_area.tscn
