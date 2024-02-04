@@ -7,3 +7,7 @@ res://scenes/heart.tscn
 res://scenes/level_completed.tscn
 res://scripts/world.gd
 res://scenes/level_tile_map.tscn
+res://scenes/level_one.tscn
+res://scenes/level_two.tscn
+res://scenes/level_transition.tscn
+res://scripts/level_transition.gd
