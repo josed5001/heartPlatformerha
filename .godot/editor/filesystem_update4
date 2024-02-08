@@ -1,12 +1,11 @@
 res://scenes/world.tscn
 res://scripts/player.gd
-res://scripts/world.gd
 res://scenes/level_transition.tscn
 res://scenes/player.tscn
 res://scenes/start_menu.tscn
 res://scenes/level_completed.tscn
+res://scripts/victory_screen.gd
+res://scenes/victory_screen.tscn
+res://scripts/level_completed.gd
+res://scripts/world.gd
 res://scenes/level_one.tscn
-res://scenes/level_two.tscn
-res://scenes/spikes.tscn
-res://scripts/Lives.gd
-res://scenes/lives.tscn

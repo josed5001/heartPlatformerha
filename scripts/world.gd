@@ -16,10 +16,13 @@ var lives = 3 #custom
 
 
 func _ready():
+	if not next_level is PackedScene:
+		level_completed.next_level_button.text = "Victory Scren"
+		next_level = load("res://scenes/victory_screen.tscn")
 	Events.level_completed.connect(show_level_completed)
 	get_tree().paused = true
 	start_in.visible = true
-	await LevelTransition.fade_from_black()
+	LevelTransition.fade_from_black()
 	animation_player.play("countdown")
 	await animation_player.animation_finished
 	get_tree().paused = false
