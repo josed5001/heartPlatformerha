@@ -9,3 +9,8 @@ res://scenes/victory_screen.tscn
 res://scripts/level_completed.gd
 res://scripts/world.gd
 res://scenes/level_one.tscn
+res://scenes/level_three.tscn
+res://scenes/level_two.tscn
+res://scenes/spikes2.tscn
+res://scenes/spikes.tscn
+res://scenes/spikesB.tscn
