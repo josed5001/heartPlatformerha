@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+signal lives_hit
 @export var movement_data : PlayerMovementData
 
 
@@ -103,4 +103,6 @@ func update_animations(input_axis):
 
 func _on_hazard_dectector_area_entered(area):
 	global_position = starting_position
+	# custom
+	lives_hit.emit()
 	
