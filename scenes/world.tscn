@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg32wokga74c8"]
+[gd_scene load_steps=9 format=3 uid="uid://bg32wokga74c8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_masge"]
 [ext_resource type="PackedScene" uid="uid://cwgsv3c8016n6" path="res://scenes/player.tscn" id="2_6qwfj"]
+[ext_resource type="PackedScene" uid="uid://dumkewtyb5u3e" path="res://scenes/level_lost.tscn" id="4_tqube"]
 [ext_resource type="PackedScene" uid="uid://fmbif42daybe" path="res://scenes/level_completed.tscn" id="5_cgnia"]
 [ext_resource type="PackedScene" uid="uid://bbohy52ai6ehu" path="res://scenes/level_tile_map.tscn" id="6_0a0eo"]
 
@@ -50,6 +51,9 @@ script = ExtResource("1_masge")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_cgnia")]
+visible = false
+
+[node name="LevelLost" parent="CanvasLayer" instance=ExtResource("4_tqube")]
 visible = false
 
 [node name="StartIn" type="ColorRect" parent="CanvasLayer"]
@@ -106,3 +110,5 @@ libraries = {
 [connection signal="lives_hit" from="Player" to="." method="_on_player_lives_hit"]
 [connection signal="next_level" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_next_level"]
 [connection signal="retry" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_retry"]
+[connection signal="LoseRetry" from="CanvasLayer/LevelLost" to="." method="_on_level_lost_lose_retry"]
+[connection signal="MainMenu" from="CanvasLayer/LevelLost" to="." method="_on_level_lost_main_menu"]

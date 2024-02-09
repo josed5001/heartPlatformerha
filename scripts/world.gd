@@ -5,13 +5,16 @@ class_name MainWorld
 var level_time = 0.0
 var start_level_msec = 0.0
 var lives = 3 #custom
+var SpikesPos: Vector2 = Vector2(-112, 48)
 @export var next_level: PackedScene
 @onready var level_completed = $CanvasLayer/LevelCompleted
+@onready var level_lost = $CanvasLayer/LevelLost
 @onready var start_in = %StartIn
 @onready var start_in_label = %StartInLabel
 @onready var animation_player = $AnimationPlayer
 @onready var level_time_label = %LevelTimeLabel
 @onready var lives_count = $CanvasLayer/VBoxContainer/LivesCount
+@onready var spikes_move = $SpikesMove
 
 
 
@@ -20,6 +23,7 @@ func _ready():
 		level_completed.next_level_button.text = "Victory Scren"
 		next_level = load("res://scenes/victory_screen.tscn")
 	Events.level_completed.connect(show_level_completed)
+	Events.level_lost.connect(show_level_lost)
 	get_tree().paused = true
 	start_in.visible = true
 	LevelTransition.fade_from_black()
@@ -48,23 +52,39 @@ func go_to_next_level():
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(next_level)
 	
+func go_to_main_menu():
+	get_tree().paused = false
+	next_level = load("res://scenes/start_menu.tscn")
+	get_tree().change_scene_to_packed(next_level)
+	
 func show_level_completed():
 	level_completed.show()
-	level_completed.retry_button.grab_focus()
+	level_completed.next_level_button.grab_focus()
 	get_tree().paused = true
 	
-
+func show_level_lost():
+	level_lost.show()
+	level_lost.lose_retry_button.grab_focus()
+	get_tree().paused = true
+	
 func _on_level_completed_next_level():
 	go_to_next_level()
 
 func _on_level_completed_retry():
 	retry()
 
+func _on_level_lost_main_menu():
+	go_to_main_menu()
+
+func _on_level_lost_lose_retry():
+	retry()
 
 func _on_player_lives_hit():
 	lives -= 1
 	lives_count.text = "Lives: " + str(lives)
+	if spikes_move:
+		spikes_move.position = SpikesPos
 	if lives == 0:
-		#will get changed to a gameover screen
-		get_tree().quit()
-		
+		Events.level_lost.emit()
+
+
