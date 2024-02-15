@@ -15,6 +15,8 @@ var SpikesPos: Vector2 = Vector2(-112, 48)
 @onready var level_time_label = %LevelTimeLabel
 @onready var lives_count = $CanvasLayer/VBoxContainer/LivesCount
 @onready var spikes_move = $SpikesMove
+@onready var heart_inv = $HeartINV
+@onready var player = $Player
 
 
 
@@ -88,3 +90,10 @@ func _on_player_lives_hit():
 		Events.level_lost.emit()
 
 
+
+
+func _on_heart_inv_rotate():
+	var angle = randi_range(0, 360)
+	var camera = player.get_node("Camera2D")
+	angle = deg_to_rad(angle)
+	camera.rotation = angle

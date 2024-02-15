@@ -5,3 +5,9 @@ res://scenes/player.tscn
 res://scenes/level_three.tscn
 res://scenes/level_completed.tscn
 res://scenes/level_lost.tscn
+res://scenes/level_four.tscn
+res://scripts/heart.gd
+res://scripts/heart_inv.gd
+res://scenes/heart_inv.tscn
+res://scenes/heart.tscn
+res://scripts/world.gd
