@@ -28,7 +28,10 @@ position = Vector2(-24, 632)
 [node name="Heart6" parent="." index="9" instance=ExtResource("2_miwa2")]
 position = Vector2(24, 936)
 
-[node name="Spikes" type="Node" parent="." index="10"]
+[node name="Heart7" parent="." index="10" instance=ExtResource("2_miwa2")]
+position = Vector2(-40, 392)
+
+[node name="Spikes" type="Node" parent="." index="11"]
 
 [node name="Spikes2" parent="Spikes" index="0" instance=ExtResource("3_45ypp")]
 position = Vector2(160, -16)
@@ -45,7 +48,8 @@ position = Vector2(64, 128)
 [node name="Spikes6" parent="Spikes" index="4" instance=ExtResource("3_45ypp")]
 position = Vector2(208, 112)
 
-[node name="HeartINV" parent="." index="11" instance=ExtResource("4_dc8pk")]
+[node name="HeartINV" parent="." index="12" instance=ExtResource("4_dc8pk")]
 position = Vector2(-16, 248)
 
-[connection signal="Rotate" from="HeartINV" to="." method="_on_heart_inv_rotate"]
+[node name="HeartINV2" parent="." index="13" instance=ExtResource("4_dc8pk")]
+position = Vector2(-72, 472)

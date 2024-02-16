@@ -4,8 +4,12 @@ class_name MainWorld
 
 var level_time = 0.0
 var start_level_msec = 0.0
+
 var lives = 3 #custom
 var SpikesPos: Vector2 = Vector2(-112, 48)
+
+
+
 @export var next_level: PackedScene
 @onready var level_completed = $CanvasLayer/LevelCompleted
 @onready var level_lost = $CanvasLayer/LevelLost
@@ -13,9 +17,11 @@ var SpikesPos: Vector2 = Vector2(-112, 48)
 @onready var start_in_label = %StartInLabel
 @onready var animation_player = $AnimationPlayer
 @onready var level_time_label = %LevelTimeLabel
+
 @onready var lives_count = $CanvasLayer/VBoxContainer/LivesCount
+@onready var hearts_left = $CanvasLayer/VBoxContainer/HeartsLeft
+
 @onready var spikes_move = $SpikesMove
-@onready var heart_inv = $HeartINV
 @onready var player = $Player
 
 
@@ -26,6 +32,7 @@ func _ready():
 		next_level = load("res://scenes/victory_screen.tscn")
 	Events.level_completed.connect(show_level_completed)
 	Events.level_lost.connect(show_level_lost)
+	Events.Rotate.connect(rotate_camera)
 	get_tree().paused = true
 	start_in.visible = true
 	LevelTransition.fade_from_black()
@@ -35,11 +42,17 @@ func _ready():
 	start_in.visible = false
 	start_level_msec = Time.get_ticks_msec()
 	print(start_level_msec)
-	lives_count.text = "Lives: " + str(lives) #custom 
+	lives_count.text = "Lives: " + str(lives) #custom
+	
+	
 
 func _process(delta):
 	level_time = Time.get_ticks_msec() - start_level_msec
 	level_time_label.text = str(level_time / 1000.0)
+	var heart_group = get_tree().get_nodes_in_group("Hearts")
+	var hearts = heart_group.size()
+	hearts_left.text = "Hearts Remain: " + str(hearts)
+	
 
 
 func retry():
@@ -89,11 +102,8 @@ func _on_player_lives_hit():
 	if lives == 0:
 		Events.level_lost.emit()
 
-
-
-
-func _on_heart_inv_rotate():
-	var angle = randi_range(0, 360)
+func rotate_camera():
+	var angle = randi_range(45, 300)
 	var camera = player.get_node("Camera2D")
 	angle = deg_to_rad(angle)
 	camera.rotation = angle

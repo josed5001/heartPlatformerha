@@ -99,6 +99,10 @@ offset_bottom = 40.0
 [node name="LivesCount" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 
+[node name="HeartsLeft" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
 [node name="LevelTileMap" parent="." instance=ExtResource("6_0a0eo")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

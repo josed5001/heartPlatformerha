@@ -2,12 +2,11 @@ res://scenes/world.tscn
 res://scripts/player.gd
 res://scenes/level_transition.tscn
 res://scenes/player.tscn
-res://scenes/level_three.tscn
-res://scenes/level_completed.tscn
-res://scenes/level_lost.tscn
 res://scenes/level_four.tscn
-res://scripts/heart.gd
-res://scripts/heart_inv.gd
-res://scenes/heart_inv.tscn
 res://scenes/heart.tscn
+res://scenes/heart_inv.tscn
 res://scripts/world.gd
+res://scenes/level_one.tscn
+res://scripts/Events.gd
+res://scripts/heart_inv.gd
+res://scenes/level_three.tscn
