@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://d33vbxkkvmcsx"]
+[gd_scene load_steps=8 format=3 uid="uid://d33vbxkkvmcsx"]
 
 [ext_resource type="PackedScene" uid="uid://bg32wokga74c8" path="res://scenes/world.tscn" id="1_ll00r"]
 [ext_resource type="PackedScene" uid="uid://ca5w3tg8ewh7b" path="res://scenes/heart.tscn" id="2_1ovox"]
 [ext_resource type="PackedScene" uid="uid://brnk7cwgqadtm" path="res://scenes/level_four.tscn" id="2_nol05"]
 [ext_resource type="PackedScene" uid="uid://draxxlsga4usu" path="res://scenes/spikesB.tscn" id="3_88hl4"]
 [ext_resource type="PackedScene" uid="uid://g1jbty365wmq" path="res://scenes/spikes.tscn" id="4_d8s4g"]
-[ext_resource type="PackedScene" uid="uid://c4gtgj2odghrs" path="res://scenes/spikesMove.tscn" id="5_1wmwd"]
+[ext_resource type="PackedScene" uid="uid://c4gtgj2odghrs" path="res://scenes/spikeslong.tscn" id="5_1wmwd"]
+[ext_resource type="Script" path="res://scripts/spikesMovement.gd" id="7_0in7i"]
 
 [node name="World" instance=ExtResource("1_ll00r")]
 next_level = ExtResource("2_nol05")
@@ -263,23 +264,24 @@ rotation = -1.5708
 position = Vector2(96, -880)
 rotation = -1.5708
 
-[node name="SpikesMove" parent="." index="5" instance=ExtResource("5_1wmwd")]
-position = Vector2(-112, 48)
-
-[node name="Heart" parent="." index="6" instance=ExtResource("2_1ovox")]
+[node name="Heart" parent="." index="5" instance=ExtResource("2_1ovox")]
 position = Vector2(-8, -152)
 
-[node name="Heart2" parent="." index="7" instance=ExtResource("2_1ovox")]
+[node name="Heart2" parent="." index="6" instance=ExtResource("2_1ovox")]
 position = Vector2(-7, -237)
 
-[node name="Heart3" parent="." index="8" instance=ExtResource("2_1ovox")]
+[node name="Heart3" parent="." index="7" instance=ExtResource("2_1ovox")]
 position = Vector2(-7, -381)
 
-[node name="Heart4" parent="." index="9" instance=ExtResource("2_1ovox")]
+[node name="Heart4" parent="." index="8" instance=ExtResource("2_1ovox")]
 position = Vector2(40, -653)
 
-[node name="Heart5" parent="." index="10" instance=ExtResource("2_1ovox")]
+[node name="Heart5" parent="." index="9" instance=ExtResource("2_1ovox")]
 position = Vector2(26, -794)
 
-[node name="Heart6" parent="." index="11" instance=ExtResource("2_1ovox")]
+[node name="Heart6" parent="." index="10" instance=ExtResource("2_1ovox")]
 position = Vector2(74, -1056)
+
+[node name="SpikesLong" parent="." index="11" instance=ExtResource("5_1wmwd")]
+position = Vector2(-112, 48)
+script = ExtResource("7_0in7i")

@@ -4,11 +4,7 @@ class_name MainWorld
 
 var level_time = 0.0
 var start_level_msec = 0.0
-
-var lives = 3 #custom
-var SpikesPos: Vector2 = Vector2(-112, 48)
-
-
+var lives = Events.lives
 
 @export var next_level: PackedScene
 @onready var level_completed = $CanvasLayer/LevelCompleted
@@ -21,7 +17,6 @@ var SpikesPos: Vector2 = Vector2(-112, 48)
 @onready var lives_count = $CanvasLayer/VBoxContainer/LivesCount
 @onready var hearts_left = $CanvasLayer/VBoxContainer/HeartsLeft
 
-@onready var spikes_move = $SpikesMove
 @onready var player = $Player
 
 
@@ -33,6 +28,9 @@ func _ready():
 	Events.level_completed.connect(show_level_completed)
 	Events.level_lost.connect(show_level_lost)
 	Events.Rotate.connect(rotate_camera)
+	Events.rotate_reset.connect(rotate_reset)
+	Events.rotate_reset.connect(_on_player_lives_hit)
+	Events.reset.connect(retry)
 	get_tree().paused = true
 	start_in.visible = true
 	LevelTransition.fade_from_black()
@@ -44,16 +42,16 @@ func _ready():
 	print(start_level_msec)
 	lives_count.text = "Lives: " + str(lives) #custom
 	
-	
 
 func _process(delta):
 	level_time = Time.get_ticks_msec() - start_level_msec
 	level_time_label.text = str(level_time / 1000.0)
+	heart_count()
+	
+func heart_count():
 	var heart_group = get_tree().get_nodes_in_group("Hearts")
 	var hearts = heart_group.size()
 	hearts_left.text = "Hearts Remain: " + str(hearts)
-	
-
 
 func retry():
 	await LevelTransition.fade_to_black()
@@ -66,13 +64,13 @@ func go_to_next_level():
 	await LevelTransition.fade_to_black()
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(next_level)
-	
 func go_to_main_menu():
 	get_tree().paused = false
 	next_level = load("res://scenes/start_menu.tscn")
 	get_tree().change_scene_to_packed(next_level)
 	
 func show_level_completed():
+	hearts_left.hide()
 	level_completed.show()
 	level_completed.next_level_button.grab_focus()
 	get_tree().paused = true
@@ -97,8 +95,6 @@ func _on_level_lost_lose_retry():
 func _on_player_lives_hit():
 	lives -= 1
 	lives_count.text = "Lives: " + str(lives)
-	if spikes_move:
-		spikes_move.position = SpikesPos
 	if lives == 0:
 		Events.level_lost.emit()
 
@@ -107,3 +103,7 @@ func rotate_camera():
 	var camera = player.get_node("Camera2D")
 	angle = deg_to_rad(angle)
 	camera.rotation = angle
+
+func rotate_reset():
+	var camera = player.get_node("Camera2D")
+	camera.rotation = 0

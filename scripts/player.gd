@@ -39,6 +39,7 @@ func _physics_process(delta):
 	if just_left_wall:
 		wall_jump_timer.start()
 	update_animations(input_axis)
+	force_reset()
 
 func apply_gravity(delta):
 	if not is_on_floor():
@@ -105,4 +106,8 @@ func _on_hazard_dectector_area_entered(area):
 	global_position = starting_position
 	# custom
 	lives_hit.emit()
+	Events.position_reset.emit()
 	
+func force_reset():
+	if Input.is_action_just_pressed("action_other"):
+		Events.reset.emit()

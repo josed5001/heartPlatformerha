@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://gkxt4qwsrerg"]
+
+[ext_resource type="Texture2D" uid="uid://bvypc7vbfl3sm" path="res://assets/Arrow-Sheet.png" id="1_7wadu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwpkq"]
+atlas = ExtResource("1_7wadu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4jkw"]
+atlas = ExtResource("1_7wadu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uecnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwpkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4jkw")
+}],
+"loop": true,
+"name": &"Arrow",
+"speed": 1.0
+}]
+
+[node name="Arrow" type="AnimatedSprite2D"]
+show_behind_parent = true
+sprite_frames = SubResource("SpriteFrames_uecnk")
+animation = &"Arrow"
+autoplay = "Arrow"
+frame_progress = 0.72908

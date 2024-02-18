@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4gtgj2odghrs"]
+[gd_scene load_steps=6 format=3 uid="uid://c4gtgj2odghrs"]
 
-[ext_resource type="Script" path="res://scripts/spikesMove.gd" id="1_1svla"]
 [ext_resource type="Texture2D" uid="uid://k3r00kfguieo" path="res://assets/spikes.png" id="1_om6ci"]
 [ext_resource type="Texture2D" uid="uid://b30cu0tnwgt2b" path="res://assets/tileset.png" id="2_byw00"]
 [ext_resource type="PackedScene" uid="uid://jftoda2y48pc" path="res://scenes/hazard_area.tscn" id="2_tjjgg"]
@@ -58,8 +57,7 @@ texture = ExtResource("2_byw00")
 [sub_resource type="TileSet" id="TileSet_vf08i"]
 sources/0 = SubResource("TileSetAtlasSource_j8o3b")
 
-[node name="SpikesMove" type="Node2D"]
-script = ExtResource("1_1svla")
+[node name="SpikesLong" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_vf08i")
