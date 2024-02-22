@@ -1,4 +1,6 @@
+Node2D
 Node
+TileMap
 CollisionPolygon2D
 Polygon2D
 Area2D
@@ -11,7 +13,6 @@ Button
 VBoxContainer
 CenterContainer
 ColorRect
-TileMap
 CanvasLayer
 Timer
 MarginContainer
