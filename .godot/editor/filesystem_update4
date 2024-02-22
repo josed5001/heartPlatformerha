@@ -7,6 +7,4 @@ res://scenes/heart_inv.tscn
 res://scenes/heart_reset.tscn
 res://scenes/level_four.tscn
 res://scenes/level_five.tscn
-res://scenes/moving_tiles.tscn
-res://scripts/move_left.gd
-res://scripts/move_right.gd
+res://scenes/spikes_danger.tscn
