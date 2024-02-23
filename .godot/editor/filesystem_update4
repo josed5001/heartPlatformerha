@@ -1,10 +1,7 @@
 res://scenes/world.tscn
 res://scripts/player.gd
 res://scenes/level_transition.tscn
-res://scenes/player.tscn
-res://scenes/heart.tscn
-res://scenes/heart_inv.tscn
-res://scenes/heart_reset.tscn
 res://scenes/level_four.tscn
 res://scenes/level_five.tscn
-res://scenes/spikes_danger.tscn
+res://scripts/move_left.gd
+res://scripts/move_right.gd

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var speed = 100
+@export var speed = 80
 @export var position_start = -450
 @export var position_end = 450
 
