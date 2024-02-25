@@ -3,5 +3,14 @@ res://scripts/player.gd
 res://scenes/level_transition.tscn
 res://scenes/level_four.tscn
 res://scenes/level_five.tscn
-res://scripts/move_left.gd
-res://scripts/move_right.gd
+res://scenes/level_two.tscn
+res://scenes/level_one.tscn
+res://scenes/level_three.tscn
+res://scenes/level_six.tscn
+res://scenes/spikes_danger_invB.tscn
+res://scenes/spikes_danger_inv.tscn
+res://scenes/spikesB.tscn
+res://scripts/timer_event.gd
+res://scripts/world.gd
+res://scripts/Events.gd
+res://scripts/Insta_Kill.gd

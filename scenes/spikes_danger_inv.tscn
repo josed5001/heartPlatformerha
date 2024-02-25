@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvcegxtd4xq5e"]
+
+[ext_resource type="Texture2D" uid="uid://b3fvdwmruh54u" path="res://assets/danger_spikes_inv-Sheet.png" id="1_kegss"]
+[ext_resource type="PackedScene" uid="uid://jftoda2y48pc" path="res://scenes/hazard_area.tscn" id="2_e5e2b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06884"]
+atlas = ExtResource("1_kegss")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7u2g"]
+atlas = ExtResource("1_kegss")
+region = Rect2(256, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8blvp"]
+atlas = ExtResource("1_kegss")
+region = Rect2(512, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isoyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06884")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7u2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8blvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8blvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8blvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8blvp")
+}],
+"loop": true,
+"name": &"SPikes",
+"speed": 5.0
+}]
+
+[node name="Spikes_Danger_INV" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -8)
+sprite_frames = SubResource("SpriteFrames_isoyk")
+animation = &"SPikes"
+autoplay = "SPikes"
+frame_progress = 0.651476
+
+[node name="HazardArea" parent="." instance=ExtResource("2_e5e2b")]
+position = Vector2(8, -8)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HazardArea"]
+position = Vector2(-8, 8)
+polygon = PackedVector2Array(12, -6, 3, -6, 0, 0, 15, 0)

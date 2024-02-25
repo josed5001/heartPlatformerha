@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d33vbxkkvmcsx"]
+[gd_scene load_steps=9 format=3 uid="uid://d33vbxkkvmcsx"]
 
 [ext_resource type="PackedScene" uid="uid://bg32wokga74c8" path="res://scenes/world.tscn" id="1_ll00r"]
 [ext_resource type="PackedScene" uid="uid://ca5w3tg8ewh7b" path="res://scenes/heart.tscn" id="2_1ovox"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://g1jbty365wmq" path="res://scenes/spikes.tscn" id="4_d8s4g"]
 [ext_resource type="PackedScene" uid="uid://c4gtgj2odghrs" path="res://scenes/spikeslong.tscn" id="5_1wmwd"]
 [ext_resource type="Script" path="res://scripts/spikesMovement.gd" id="7_0in7i"]
+[ext_resource type="PackedScene" uid="uid://gkxt4qwsrerg" path="res://scenes/arrow.tscn" id="8_4hoci"]
 
 [node name="World" instance=ExtResource("1_ll00r")]
 next_level = ExtResource("2_nol05")
@@ -264,6 +265,54 @@ rotation = -1.5708
 position = Vector2(96, -880)
 rotation = -1.5708
 
+[node name="Spikes66" parent="SpikesFolder" index="65" instance=ExtResource("3_88hl4")]
+position = Vector2(96, -440)
+rotation = -1.5708
+
+[node name="Spikes67" parent="SpikesFolder" index="66" instance=ExtResource("3_88hl4")]
+position = Vector2(96, -472)
+rotation = -1.5708
+
+[node name="Spikes68" parent="SpikesFolder" index="67" instance=ExtResource("3_88hl4")]
+position = Vector2(96, -504)
+rotation = -1.5708
+
+[node name="Spikes69" parent="SpikesFolder" index="68" instance=ExtResource("3_88hl4")]
+position = Vector2(96, -536)
+rotation = -1.5708
+
+[node name="Spikes70" parent="SpikesFolder" index="69" instance=ExtResource("3_88hl4")]
+position = Vector2(96, -568)
+rotation = -1.5708
+
+[node name="Spikes71" parent="SpikesFolder" index="70" instance=ExtResource("3_88hl4")]
+position = Vector2(96, -600)
+rotation = -1.5708
+
+[node name="Spikes72" parent="SpikesFolder" index="71" instance=ExtResource("3_88hl4")]
+position = Vector2(-112, -472)
+rotation = 1.5708
+
+[node name="Spikes73" parent="SpikesFolder" index="72" instance=ExtResource("3_88hl4")]
+position = Vector2(-112, -504)
+rotation = 1.5708
+
+[node name="Spikes74" parent="SpikesFolder" index="73" instance=ExtResource("3_88hl4")]
+position = Vector2(-112, -536)
+rotation = 1.5708
+
+[node name="Spikes75" parent="SpikesFolder" index="74" instance=ExtResource("3_88hl4")]
+position = Vector2(-112, -568)
+rotation = 1.5708
+
+[node name="Spikes76" parent="SpikesFolder" index="75" instance=ExtResource("3_88hl4")]
+position = Vector2(-112, -600)
+rotation = 1.5708
+
+[node name="Spikes77" parent="SpikesFolder" index="76" instance=ExtResource("3_88hl4")]
+position = Vector2(-112, -632)
+rotation = 1.5708
+
 [node name="Heart" parent="." index="5" instance=ExtResource("2_1ovox")]
 position = Vector2(-8, -152)
 
@@ -285,3 +334,7 @@ position = Vector2(74, -1056)
 [node name="SpikesLong" parent="." index="11" instance=ExtResource("5_1wmwd")]
 position = Vector2(-112, 48)
 script = ExtResource("7_0in7i")
+
+[node name="Arrow" parent="." index="12" instance=ExtResource("8_4hoci")]
+position = Vector2(-33, -416)
+rotation = 3.14159

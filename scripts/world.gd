@@ -39,6 +39,7 @@ func _ready():
 	get_tree().paused = false
 	start_in.visible = false
 	start_level_msec = Time.get_ticks_msec()
+	Events.stopwatch_start.emit()
 	print(start_level_msec)
 	lives_count.text = "Lives: " + str(lives) #custom
 	
@@ -46,6 +47,8 @@ func _ready():
 func _process(delta):
 	level_time = Time.get_ticks_msec() - start_level_msec
 	level_time_label.text = str(level_time / 1000.0)
+	print(level_time)
+	clock_checker()
 	heart_count()
 	
 func heart_count():
@@ -107,3 +110,8 @@ func rotate_camera():
 func rotate_reset():
 	var camera = player.get_node("Camera2D")
 	camera.rotation = 0
+	
+func clock_checker():
+	if not level_time >= 1000 and level_time <= 1010: pass
+	elif not level_time >= 2000 and level_time <= 2010: pass
+	else: Events.stopwatch_check.emit()
