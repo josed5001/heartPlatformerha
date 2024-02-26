@@ -5,6 +5,7 @@ class_name MainWorld
 var level_time = 0.0
 var start_level_msec = 0.0
 var lives = Events.lives
+var is_rotating = false
 
 @export var next_level: PackedScene
 @onready var level_completed = $CanvasLayer/LevelCompleted
@@ -31,6 +32,7 @@ func _ready():
 	Events.rotate_reset.connect(rotate_reset)
 	Events.rotate_reset.connect(_on_player_lives_hit)
 	Events.reset.connect(retry)
+	Events.player_rotation.connect(player_rotated)
 	get_tree().paused = true
 	start_in.visible = true
 	LevelTransition.fade_from_black()
@@ -40,16 +42,15 @@ func _ready():
 	start_in.visible = false
 	start_level_msec = Time.get_ticks_msec()
 	Events.stopwatch_start.emit()
-	print(start_level_msec)
 	lives_count.text = "Lives: " + str(lives) #custom
 	
 
 func _process(delta):
 	level_time = Time.get_ticks_msec() - start_level_msec
 	level_time_label.text = str(level_time / 1000.0)
-	print(level_time)
 	clock_checker()
 	heart_count()
+	do_rotate()
 	
 func heart_count():
 	var heart_group = get_tree().get_nodes_in_group("Hearts")
@@ -112,6 +113,24 @@ func rotate_reset():
 	camera.rotation = 0
 	
 func clock_checker():
-	if not level_time >= 1000 and level_time <= 1010: pass
-	elif not level_time >= 2000 and level_time <= 2010: pass
+	if not level_time >= 2000 and level_time <= 2010: pass
 	else: Events.stopwatch_check.emit()
+	if not level_time >= 11900 and level_time <= 11920: pass
+	else: Events.stopwatch_check.emit()
+	if not level_time >= 18880 and level_time <= 18890: pass
+	else: Events.stopwatch_check.emit()
+	if not level_time >= 38000 and level_time <= 38050: pass
+	else: Events.stopwatch_check.emit()
+	
+func player_rotated():
+	is_rotating = true
+func do_rotate():
+	if not is_rotating: pass
+	else:
+		var camera = player.get_node("Camera2D")
+		if Input.is_action_pressed("action_left"):
+			camera.rotation -= 0.01
+		if Input.is_action_pressed("action_right"):
+			camera.rotation += 0.01
+		if Input.is_action_just_pressed("action_r_reset"):
+			camera.rotation = 0
